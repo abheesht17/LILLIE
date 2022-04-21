@@ -100,7 +100,7 @@ data = pd.read_csv('coref_text.csv',  sep= '\t')
 
 cl = ClausIE.get_instance()
 
-extractor = OpenIE5('http://localhost:9000')
+extractor = OpenIE5('http://localhost:8500')
 
 #allennlp openIE predictor
 predictor1 = Predictor.from_path("https://s3-us-west-2.amazonaws.com/allennlp/models/openie-model.2018-08-20.tar.gz")

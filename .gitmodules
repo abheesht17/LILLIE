@@ -1,3 +1,6 @@
 [submodule "learning_based/pyclausie"]
 	path = learning_based/pyclausie
 	url = https://github.com/AnthonyMRios/pyclausie.git
+[submodule "learning_based/OpenIE-standalone"]
+	path = learning_based/OpenIE-standalone
+	url = https://github.com/dair-iitd/OpenIE-standalone.git

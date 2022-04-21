@@ -1,0 +1,3 @@
+[submodule "learning_based/pyclausie"]
+	path = learning_based/pyclausie
+	url = https://github.com/AnthonyMRios/pyclausie.git

@@ -21,6 +21,9 @@ mv stanford-english-corenlp-2018-10-05-models.jar ./rule_based/parser/stanford-c
 
 # pyclausie
 cd $curr_dir/learning_based/pyclausie
+# There is a bug in the code; the author uses "basestring", which is no longer
+# valid in Python 3.x. Replace all occurrences of that.
+sed -i 's/basestring/str/g' ./build/lib/pyclausie/ClausIE.py
 python3 setup.py install
 
 

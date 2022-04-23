@@ -358,14 +358,17 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument('-i', '--input', dest='infile', required=True,
                     metavar='INPUT_FILE', help='The input file to the script.')
-    inp = parser.parse_args().infile
+    inp = ap.parse_args().infile
     outp,sents = [],{}
     with open(inp,"r") as fl:
         for ln in csv.DictReader(fl):
-            sents[ln["sent_rawtext"]] = (sents.get(ln["sent_rawtext"]) +
-                                         [(ln["subject"],ln["predicate"],ln["object"])])
+            # print("HELLO ", sents.get(ln["sent_rawtext"]))
+            try:
+              sents[ln["sent_rawtext"]] = (sents.get(ln["sent_rawtext"], []) +
+                                          [(ln["subject"],ln["predicate"],ln["object"])])
+            except:
+              continue
     outp = [trip for sent in sents
-            for trip in combinetriples(sent,sents["sent"])]
+            for trip in combinetriples(sent,sents[sent])]
     with open("./output.txt","w") as fl:
         fl.write("\n".join([" ; ".join(trip) for trip in outp]))
-

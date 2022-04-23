@@ -8,10 +8,11 @@ curr_dir=$(pwd)
 # Create a Python venv
 pip install virtualenv
 virtualenv lillie
+source $curr_dir/lillie/bin/activate
 
 # LILLIE
-source $curr_dir/lillie/bin/activate; pip install -r requirements.txt
-source $curr_dir/lillie/bin/activate; python3 -m spacy download en_core_web_md
+pip install -r requirements.txt
+python3 -m spacy download en_core_web_md
 
 mkdir ./rule_based/parser
 
@@ -27,7 +28,7 @@ cd $curr_dir/learning_based/pyclausie
 # There is a bug in the code; the author uses "basestring", which is no longer
 # valid in Python 3.x. Replace all occurrences of that.
 sed -i 's/basestring/str/g' ./build/lib/pyclausie/ClausIE.py
-source $curr_dir/lillie/bin/activate; python3 setup.py install
+python3 setup.py install
 
 
 # OpenIE

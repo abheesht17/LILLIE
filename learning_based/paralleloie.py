@@ -34,7 +34,7 @@ from itertools import islice
 import re
 from allennlp.predictors.predictor import Predictor
 import nltk
-
+nltk.download('punkt')
 
 import argparse
 

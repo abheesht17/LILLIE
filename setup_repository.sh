@@ -16,8 +16,8 @@ python3 -m spacy download en_core_web_md
 
 mkdir ./rule_based/parser
 
-wget http://nlp.stanford.edu/software/stanford-english-corenlp-2018-10-05-models.jar
-wget http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip
+wget --no-check-certificate http://nlp.stanford.edu/software/stanford-english-corenlp-2018-10-05-models.jar
+wget --no-check-certificate http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip
 
 unzip stanford-corenlp-full-2018-10-05.zip -d ./rule_based/parser
 mv stanford-english-corenlp-2018-10-05-models.jar ./rule_based/parser/stanford-corenlp-full-2018-10-05
